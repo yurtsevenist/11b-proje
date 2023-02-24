@@ -14,7 +14,7 @@
                                         <a href="#">Purchase Now!</a>
                                     </div>
                                 </div>
-                                <img src="assets/images/left-banner-image.jpg" alt="">
+                                <img src="{{asset('front')}}/assets/images/left-banner-image.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-01.jpg">
+                                            <img src="{{asset('front')}}/assets/images/baner-right-image-01.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-02.jpg">
+                                            <img src="{{asset('front')}}/assets/images/baner-right-image-02.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-03.jpg">
+                                            <img src="{{asset('front')}}/assets/images/baner-right-image-03.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="assets/images/baner-right-image-04.jpg">
+                                            <img src="{{asset('front')}}/assets/images/baner-right-image-04.jpg">
                                         </div>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/men-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/men-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Classic Spring</h4>
@@ -157,7 +157,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/men-02.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/men-02.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Air Force 1 X</h4>
@@ -180,7 +180,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/men-03.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/men-03.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Love Nana ‘20</h4>
@@ -203,7 +203,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/men-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/men-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Classic Spring</h4>
@@ -250,7 +250,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/women-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/women-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>New Green Jacket</h4>
@@ -273,7 +273,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/women-02.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/women-02.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Classic Dress</h4>
@@ -296,7 +296,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/women-03.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/women-03.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Spring Collection</h4>
@@ -319,7 +319,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/women-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/women-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Classic Spring</h4>
@@ -366,7 +366,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/kid-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/kid-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>School Collection</h4>
@@ -389,7 +389,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/kid-02.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/kid-02.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Summer Cap</h4>
@@ -412,7 +412,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/kid-03.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/kid-03.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Classic Kid</h4>
@@ -435,7 +435,7 @@
                                                 <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                             </ul>
                                         </div>
-                                        <img src="assets/images/kid-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/kid-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Classic Spring</h4>
@@ -485,12 +485,12 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="first-image">
-                                        <img src="assets/images/explore-image-01.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/explore-image-01.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="second-image">
-                                        <img src="assets/images/explore-image-02.jpg" alt="">
+                                        <img src="{{asset('front')}}/assets/images/explore-image-02.jpg" alt="">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

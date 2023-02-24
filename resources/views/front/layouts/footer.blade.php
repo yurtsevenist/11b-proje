@@ -20,7 +20,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="assets/images/instagram-01.jpg" alt="">
+                    <img src="{{asset('front')}}/assets/images/instagram-01.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -31,7 +31,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="assets/images/instagram-02.jpg" alt="">
+                    <img src="{{asset('front')}}/assets/images/instagram-02.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -42,7 +42,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="assets/images/instagram-03.jpg" alt="">
+                    <img src="{{asset('front')}}/assets/images/instagram-03.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -53,7 +53,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="assets/images/instagram-04.jpg" alt="">
+                    <img src="{{asset('front')}}/assets/images/instagram-04.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -64,7 +64,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="assets/images/instagram-05.jpg" alt="">
+                    <img src="{{asset('front')}}/assets/images/instagram-05.jpg" alt="">
                 </div>
             </div>
             <div class="col-2">
@@ -75,7 +75,7 @@
                             <i class="fa fa-instagram"></i>
                         </a>
                     </div>
-                    <img src="assets/images/instagram-06.jpg" alt="">
+                    <img src="{{asset('front')}}/assets/images/instagram-06.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -142,7 +142,7 @@
             <div class="col-lg-3">
                 <div class="first-item">
                     <div class="logo">
-                        <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
+                        <img src="{{asset('front')}}/assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
                     </div>
                     <ul>
                         <li><a href="#">16501 Collins Ave, Sunny Isles Beach, FL 33160, United States</a></li>
@@ -196,26 +196,26 @@
 
 
 <!-- jQuery -->
-<script src="assets/js/jquery-2.1.0.min.js"></script>
+<script src="{{asset('front')}}/assets/js/jquery-2.1.0.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="assets/js/popper.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{{asset('front')}}/assets/js/popper.js"></script>
+<script src="{{asset('front')}}/assets/js/bootstrap.min.js"></script>
 
 <!-- Plugins -->
-<script src="assets/js/owl-carousel.js"></script>
-<script src="assets/js/accordions.js"></script>
-<script src="assets/js/datepicker.js"></script>
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
-<script src="assets/js/imgfix.min.js"></script>
-<script src="assets/js/slick.js"></script>
-<script src="assets/js/lightbox.js"></script>
-<script src="assets/js/isotope.js"></script>
+<script src="{{asset('front')}}/assets/js/owl-carousel.js"></script>
+<script src="{{asset('front')}}/assets/js/accordions.js"></script>
+<script src="{{asset('front')}}/assets/js/datepicker.js"></script>
+<script src="{{asset('front')}}/assets/js/scrollreveal.min.js"></script>
+<script src="{{asset('front')}}/assets/js/waypoints.min.js"></script>
+<script src="{{asset('front')}}/assets/js/jquery.counterup.min.js"></script>
+<script src="{{asset('front')}}/assets/js/imgfix.min.js"></script>
+<script src="{{asset('front')}}/assets/js/slick.js"></script>
+<script src="{{asset('front')}}/assets/js/lightbox.js"></script>
+<script src="{{asset('front')}}/assets/js/isotope.js"></script>
 
 <!-- Global Init -->
-<script src="assets/js/custom.js"></script>
+<script src="{{asset('front')}}/assets/js/custom.js"></script>
 
 <script>
 
