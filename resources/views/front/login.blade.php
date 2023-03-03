@@ -18,6 +18,16 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block btn-sm">Giriş</button>
         <br>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center">
+                <a class="text-info p-3" href="#">Üye Ol</a>
+            </div>
+            <div class="col-md-4 text-center">
+                <a class="text-info p-3" href="#">Şifremi Unutum</a>
+            </div>
+        </div>
+        <br>
       </form>
   </div>
 @endsection
