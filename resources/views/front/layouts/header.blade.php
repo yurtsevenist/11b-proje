@@ -62,7 +62,11 @@ https://templatemo.com/tm-571-hexashop
                             <li class="scroll-to-section"><a href="#women">Kadın</a></li>
                             <li class="scroll-to-section"><a href="#kids">Çocuk</a></li>
                             <li class="scroll-to-section"><a href="#">İletişim</a></li>
-                            <li class="scroll-to-section"><a href="#">Oturum Aç</li>
+                            @auth
+                            <li class="scroll-to-section"><a href="{{route('logOut')}}">{{Auth::user()->name}}</li>
+                            @else
+                            <li class="scroll-to-section"><a href="{{url('login')}}">Oturum Aç</li>
+                            @endauth
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

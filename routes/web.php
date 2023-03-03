@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('front.home');
 });
+Route::get('login', function () {
+    return view('front.login');
+});
+
+Route::post('loginPost', [Controller::class, 'loginPost'])->name('loginPost');
+Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');
