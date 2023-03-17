@@ -9,7 +9,7 @@
         @endforeach
     </div>
     @endif
-    <form action="#" method="POST">
+    <form action="{{route('profilePost')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Adınız Soyadınız</label>

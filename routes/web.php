@@ -31,5 +31,6 @@ Route::get('profil', function () {
 
 Route::post('loginPost', [Controller::class, 'loginPost'])->name('loginPost');
 Route::post('registerPost', [Controller::class, 'registerPost'])->name('registerPost');
+Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
 
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');

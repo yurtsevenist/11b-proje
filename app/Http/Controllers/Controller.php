@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests\RegisterPostRequest;
+use App\Http\Requests\ProfilePostRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -46,6 +47,23 @@ class Controller extends BaseController
             toastr()->error('Beklenmedik bir hata meydana geldi','Hata');
             return redirect()->back();
         }
+
+    }
+    public function profilePost(ProfilePostRequest $r)
+    {
+        try {
+            //$user=User::whereId(Auth::user()->id)->first();
+            $user=User::find(Auth::user()->id);
+            $user->name=$r->name;
+            $user->password=Hash::make($r->password);
+            $user->save();
+            toastr()->success('Bilgileriniz güncellenmiştir', 'Başarılı');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            toastr()->error('Beklenmedik bir hata meydana geldi','Hata');
+            return redirect()->back();
+        }
+
 
     }
 }
