@@ -3,7 +3,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/yurtsevenist/11A-Proje.git
+git remote add origin https://github.com/yurtsevenist/11b-proje.git
 git push -u origin main
 
 

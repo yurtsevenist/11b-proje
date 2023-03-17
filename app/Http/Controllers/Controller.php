@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Http\Requests\RegisterPostRequest;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -29,7 +30,7 @@ class Controller extends BaseController
         Auth::logout();
         return view('front.home');
     }
-    public function registerPost(Request $request)
+    public function registerPost(RegisterPostRequest $request)
     {
         dd($request);
     }
