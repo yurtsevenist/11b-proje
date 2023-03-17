@@ -33,6 +33,7 @@ class Controller extends BaseController
     }
     public function registerPost(RegisterPostRequest $request)
     {
+        $request->flash();
         try {
             $user=new User;
             $user->name=$request->name;

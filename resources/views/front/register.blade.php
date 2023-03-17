@@ -13,11 +13,11 @@
         @csrf
         <div class="form-group">
             <label for="name">Adınız Soyadınız</label>
-            <input type="text" class="form-control" id="name" name="name"  placeholder="Adnız Soyadınız" required>
+            <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}"  placeholder="Adnız Soyadınız" required>
           </div>
         <div class="form-group">
           <label for="email">E-Posta Adresiniz</label>
-          <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required placeholder="E-Posta Adresiniz">
+          <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" aria-describedby="emailHelp" required placeholder="E-Posta Adresiniz">
         </div>
         <div class="form-group">
           <label for="password">Şifreniz</label>
