@@ -29,4 +29,13 @@ class RegisterPostRequest extends FormRequest
             'password'=>['string','min:6','max:12','confirmed'],
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'Adı Soyadı',
+            'email' => 'E-Posta',
+            'password' => 'Şifre',
+        ];
+    }
 }
