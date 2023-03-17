@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests\RegisterPostRequest;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -32,6 +33,18 @@ class Controller extends BaseController
     }
     public function registerPost(RegisterPostRequest $request)
     {
-        dd($request);
+        try {
+            $user=new User;
+            $user->name=$request->name;
+            $user->email=$request->email;
+            $user->password=Hash::make($request->password);
+            $user->save();
+            toastr()->success('Üyeliğiniz tamamlanmıştır ', 'Başarılı');
+            return view('front.login');
+        } catch (\Throwable $th) {
+            toastr()->error('Beklenmedik bir hata meydana geldi','Hata');
+            return redirect()->back();
+        }
+
     }
 }
