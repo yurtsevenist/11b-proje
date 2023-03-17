@@ -16,9 +16,16 @@ use App\Http\Controllers\Controller;
 Route::get('/', function () {
     return view('front.home');
 });
+
 Route::get('login', function () {
     return view('front.login');
 });
 
+Route::get('register', function () {
+    return view('front.register');
+});
+
 Route::post('loginPost', [Controller::class, 'loginPost'])->name('loginPost');
+Route::post('registerPost', [Controller::class, 'registerPost'])->name('registerPost');
+
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');

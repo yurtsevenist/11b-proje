@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-4 text-center">
-                <a class="text-info p-3" href="#">Üye Ol</a>
+                <a class="text-info p-3" href="{{url('register')}}">Üye Ol</a>
             </div>
             <div class="col-md-4 text-center">
                 <a class="text-info p-3" href="#">Şifremi Unutum</a>

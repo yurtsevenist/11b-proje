@@ -29,4 +29,8 @@ class Controller extends BaseController
         Auth::logout();
         return view('front.home');
     }
+    public function registerPost(Request $request)
+    {
+        dd($request);
+    }
 }

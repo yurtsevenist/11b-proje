@@ -78,7 +78,7 @@ https://templatemo.com/tm-571-hexashop
                                 <a href="javascript:;">Üye İşlemleri</a>
                                 <ul>
                                     <li><a href="{{url('login')}}">Oturum Aç</a></li>
-                                    <li><a href="#">Üye Kayıt</a></li>
+                                    <li><a href="{{url('register')}}">Üye Kayıt</a></li>
                                     <li><a href="#">Şifremi Unuttum</a></li>
                                 </ul>
                             </li>
