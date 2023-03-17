@@ -10,3 +10,6 @@ github üzerinen proje indirilirse sırasıyla:
 2- paket güncellemeleri için : composer update
 3- projeye key oluşturmak için : php artisan key:generate
 
+projeye request oluşturmak için: php artisan make:request RequestAdi
+
+
