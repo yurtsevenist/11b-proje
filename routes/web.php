@@ -25,6 +25,10 @@ Route::get('register', function () {
     return view('front.register');
 });
 
+Route::get('profil', function () {
+    return view('front.profil');
+});
+
 Route::post('loginPost', [Controller::class, 'loginPost'])->name('loginPost');
 Route::post('registerPost', [Controller::class, 'registerPost'])->name('registerPost');
 

@@ -68,6 +68,7 @@ https://templatemo.com/tm-571-hexashop
                                 <ul>
                                     <li><a href="#">Sepetim</a></li>
                                     <li><a href="#">Siparişlerim</a></li>
+                                    <li><a href="{{url('profil')}}">Profil Sayfam</a></li>
                                     <li><a href="{{route('logOut')}}">Oturumu Kapat</a></li>
 
                                 </ul>
