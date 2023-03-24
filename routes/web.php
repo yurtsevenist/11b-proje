@@ -40,4 +40,5 @@ Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePos
 
 Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');
 Route::get('/detail/{id}', [Controller::class, 'detail'])->name('detail');
+Route::get('/products/{kind}', [Controller::class, 'products'])->name('products');
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');

@@ -79,4 +79,34 @@ class Controller extends BaseController
         $urun=Product::whereId($id)->first();
         return view('front.detail',compact('urun'));
     }
+    public function products($kind)
+    {
+        if($kind=="all")
+        {
+            $uruns=Product::orderBy('point','DESC')->paginate(9);
+            $kind="Tüm Ürünler";
+        }
+        else if($kind=="men")
+        {
+            $uruns=Product::whereCategory('Erkek')->orderBy('created_at','DESC')->paginate(9);;
+            $kind="Erkek Kategorisindeki Ürünler";
+        }
+        else if($kind=="women")
+        {
+            $uruns=Product::whereCategory('Kadın')->orderBy('created_at','DESC')->paginate(9);;
+            $kind="Kadın Kategorisindeki Ürünler";
+        }
+        else if($kind=="kids")
+        {
+            $uruns=Product::whereCategory('Çocuk')->orderBy('created_at','DESC')->paginate(9);;
+            $kind="Çocuk Kategorisindeki Ürünler";
+        }
+        else
+        {
+            $uruns=Product::whereCategory('Aksesuar')->orderBy('created_at','DESC')->paginate(9);;
+            $kind="Aksesuar Kategorisindeki Ürünler";
+        }
+        return view('front.products',compact('uruns','kind'));
+
+    }
 }

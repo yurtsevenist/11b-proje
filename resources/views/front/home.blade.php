@@ -8,10 +8,10 @@
                         <div class="left-content">
                             <div class="thumb">
                                 <div class="inner-content">
-                                    <h4>We Are Hexashop</h4>
-                                    <span>Awesome, clean &amp; creative HTML5 Template</span>
+                                    <h4>Tüm Ürünlerimiz</h4>
+                                    <span>Sizin için özenle seçmiş olduğumuz ürünlerimiz?</span>
                                     <div class="main-border-button">
-                                        <a href="#">Purchase Now!</a>
+                                        <a href="{{route('products','all')}}">Şimdi Satın Al!</a>
                                     </div>
                                 </div>
                                 <img src="{{asset('front')}}/assets/images/left-banner-image.jpg" alt="">
@@ -25,15 +25,15 @@
                                     <div class="right-first-image">
                                         <div class="thumb">
                                             <div class="inner-content">
-                                                <h4>Women</h4>
-                                                <span>Best Clothes For Women</span>
+                                                <h4>Kadın</h4>
+                                                <span>Tüm Kadın Ürünlerimiz</span>
                                             </div>
                                             <div class="hover-content">
                                                 <div class="inner">
-                                                    <h4>Women</h4>
+                                                    <h4>WKadın</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div class="main-border-button">
-                                                        <a href="#">Discover More</a>
+                                                        <a href="{{route('products','women')}}">Keşfet</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -53,7 +53,7 @@
                                                     <h4>Men</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div class="main-border-button">
-                                                        <a href="#">Discover More</a>
+                                                        <a href="{{route('products','men')}}">Keşfet</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,7 +73,7 @@
                                                     <h4>Kids</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div class="main-border-button">
-                                                        <a href="#">Discover More</a>
+                                                        <a href="{{route('products','kids')}}">Keşfet</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -93,7 +93,7 @@
                                                     <h4>Accessories</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div class="main-border-button">
-                                                        <a href="#">Discover More</a>
+                                                        <a href="{{route('products','aks')}}">Keşfet</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,7 +179,7 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="{{route('detail',$women->id)}}"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
@@ -227,7 +227,7 @@
                                  <div class="thumb">
                                      <div class="hover-content">
                                          <ul>
-                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="{{route('detail',$kid->id)}}"><i class="fa fa-eye"></i></a></li>
                                              <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
                                              <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                          </ul>
