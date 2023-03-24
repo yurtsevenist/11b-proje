@@ -23,7 +23,8 @@ class ProductFactory extends Factory
         return [
             'code'=>Str::random(6),
             'name' => $urunler[rand(0,8)],
-            'info'=>$this->faker->text(200),
+            'photo'=>$this->faker->imageUrl(640, 480, 'all', true,'Faker'),
+            'info'=>$this->faker->text(100),
             'category' => $kategori[rand(0,3)],
             'size'=>$beden[rand(0,4)] ,
             'color'=>$renk[rand(0,7)],
