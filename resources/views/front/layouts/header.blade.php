@@ -51,17 +51,18 @@ https://templatemo.com/tm-571-hexashop
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <a href="{{url('/')}}" class="logo">
                             <img src="{{asset('front')}}/assets/images/logo.png">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="{{url('/')}}" class="active">Anasayfa</a></li>
-                            <li class="scroll-to-section"><a href="#men">Erkek</a></li>
-                            <li class="scroll-to-section"><a href="#women">Kadın</a></li>
-                            <li class="scroll-to-section"><a href="#kids">Çocuk</a></li>
-                            <li class="scroll-to-section"><a href="#">İletişim</a></li>
+                            <li class="scroll-to-section"><a href="{{url('/')}}" class=" @if(Request::segment(1) == '') active @endif">Anasayfa</a></li>
+                            <li class="scroll-to-section"><a href="{{route('products','men')}}" class=" @if(Request::segment(2) == 'men') active @endif">Erkek</a></li>
+                            <li class="scroll-to-section"><a href="{{route('products','women')}}" class=" @if(Request::segment(2) == 'women') active @endif">Kadın</a></li>
+                            <li class="scroll-to-section"><a href="{{route('products','kids')}}" class=" @if(Request::segment(2) == 'kids') active @endif">Çocuk</a></li>
+                            <li class="scroll-to-section"><a href="{{route('products','aks')}}" class=" @if(Request::segment(2) == 'aks') active @endif">Aksesuar</a></li>
+                            <li class="scroll-to-section"><a href="#" class=" @if(Request::segment(1) == 'contact') active @endif">İletişim</a></li>
                             @auth
                             <li class="submenu">
                                 <a href="javascript:;">{{Auth::user()->name}}</a>

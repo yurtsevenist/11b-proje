@@ -50,7 +50,11 @@
                     </div>
                     <div class="total">
                         <h4>Total: $0</h4>
-                        <div class="main-border-button"><a href="#">Add To Cart</a></div>
+                        @if($urun->number>0)
+                        <div class="main-border-button"><a href="#">Sepete Ekle</a></div>
+                        @else
+                        <div class="main-border-button" ><a class="text-warning">Stokta Yok</a></div>
+                        @endif
                     </div>
                 </div>
             </div>
