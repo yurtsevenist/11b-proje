@@ -29,7 +29,16 @@
           </div>
         <button type="submit" class="btn btn-primary btn-block btn-sm">Güncelle</button>
         <br>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center">
+                <a class="text-info p-3" href="{{route('userDelete',Auth::user()->id)}}">Üyeliğimi Sil</a>
+            </div>
+            <div class="col-md-4 text-center">
 
+            </div>
+        </div>
+        <br>
 
       </form>
   </div>

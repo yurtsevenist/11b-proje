@@ -66,4 +66,11 @@ class Controller extends BaseController
 
 
     }
+    public function userDelete($id)
+    {
+       $sil= User::whereId($id)->first();
+       $sil->delete();
+       toastr()->success('Üyeliğiniz Sonlandırılmıştır', 'Başarılı');
+       return view('front.home');
+    }
 }
