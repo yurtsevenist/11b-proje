@@ -15,8 +15,11 @@ use App\Models\Product;
 */
 
 Route::get('/', function () {
-    $mens=Product::whereCategory('Erkek')->take(5)->orderBy('point','DESC');
-    return view('front.home',compact('mens'));
+    $mens=Product::whereCategory('Erkek')->take(5)->orderBy('point','DESC')->get();
+    $womens=Product::whereCategory('Kadın')->take(5)->orderBy('point','DESC')->get();
+    $kids=Product::whereCategory('Çocuk')->take(5)->orderBy('point','DESC')->get();
+    $aks=Product::whereCategory('Aksesuar')->take(5)->orderBy('point','DESC')->get();
+    return view('front.home',compact('mens','womens','kids','aks'));
 });
 
 Route::get('login', function () {

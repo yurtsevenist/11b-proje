@@ -114,8 +114,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="section-heading">
-                            <h2>Men's Latest</h2>
-                            <span>Details to details is what makes Hexashop different from the other themes.</span>
+                            <h2>Best Erkek</h2>
+                            <span>En çok ilgi gören Erkek giyim ürünlerimiz.</span>
                         </div>
                     </div>
                 </div>
@@ -125,98 +125,31 @@
                     <div class="col-lg-12">
                         <div class="men-item-carousel">
                             <div class="owl-men-item owl-carousel">
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/men-01.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Spring</h4>
-                                        <span>$120.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
+                               @foreach ($mens as $men )
+                               <div class="item">
+                                <div class="thumb">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
+                                    <img src="{{$men->photo}}" alt="">
                                 </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/men-02.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Air Force 1 X</h4>
-                                        <span>$90.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
+                                <div class="down-content">
+                                    <h4>{{$men->name}}</h4>
+                                    <span>${{$men->price}}</span>
+                                    <ul class="stars">
+                                    @for ($i=1;$i<=$men->point;$i++)
+                                    <li><i class="fa fa-star"></i></li>
+                                    @endfor
+
+                                    </ul>
                                 </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/men-03.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Love Nana ‘20</h4>
-                                        <span>$150.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/men-01.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Spring</h4>
-                                        <span>$120.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            </div>
+                               @endforeach
+
                             </div>
                         </div>
                     </div>
@@ -230,8 +163,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="section-heading">
-                            <h2>Women's Latest</h2>
-                            <span>Details to details is what makes Hexashop different from the other themes.</span>
+                            <h2>Best Kadın</h2>
+                            <span>En çok ilgi gören Kadın giyim ürünlerimiz.</span>
                         </div>
                     </div>
                 </div>
@@ -241,98 +174,30 @@
                     <div class="col-lg-12">
                         <div class="women-item-carousel">
                             <div class="owl-women-item owl-carousel">
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/women-01.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>New Green Jacket</h4>
-                                        <span>$75.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
+                                @foreach ($womens as $women )
+                               <div class="item">
+                                <div class="thumb">
+                                    <div class="hover-content">
+                                        <ul>
+                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
+                                    <img src="{{$women->photo}}" alt="">
                                 </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/women-02.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Dress</h4>
-                                        <span>$45.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
+                                <div class="down-content">
+                                    <h4>{{$women->name}}</h4>
+                                    <span>${{$women->price}}</span>
+                                    <ul class="stars">
+                                    @for ($i=1;$i<=$women->point;$i++)
+                                    <li><i class="fa fa-star"></i></li>
+                                    @endfor
+
+                                    </ul>
                                 </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/women-03.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Spring Collection</h4>
-                                        <span>$130.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/women-01.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Spring</h4>
-                                        <span>$120.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            </div>
+                               @endforeach
                             </div>
                         </div>
                     </div>
@@ -346,8 +211,8 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="section-heading">
-                            <h2>Kid's Latest</h2>
-                            <span>Details to details is what makes Hexashop different from the other themes.</span>
+                            <h2>Best Çocuk</h2>
+                            <span>En çok ilgi gören Çocuk Ürünlerimiz</span>
                         </div>
                     </div>
                 </div>
@@ -357,98 +222,30 @@
                     <div class="col-lg-12">
                         <div class="kid-item-carousel">
                             <div class="owl-kid-item owl-carousel">
+                                @foreach ($kids as $kid )
                                 <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/kid-01.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>School Collection</h4>
-                                        <span>$80.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/kid-02.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Summer Cap</h4>
-                                        <span>$12.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/kid-03.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Kid</h4>
-                                        <span>$30.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <div class="hover-content">
-                                            <ul>
-                                                <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <img src="{{asset('front')}}/assets/images/kid-01.jpg" alt="">
-                                    </div>
-                                    <div class="down-content">
-                                        <h4>Classic Spring</h4>
-                                        <span>$120.00</span>
-                                        <ul class="stars">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                 <div class="thumb">
+                                     <div class="hover-content">
+                                         <ul>
+                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
+                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                             <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                         </ul>
+                                     </div>
+                                     <img src="{{$kid->photo}}" alt="">
+                                 </div>
+                                 <div class="down-content">
+                                     <h4>{{$kid->name}}</h4>
+                                     <span>${{$kid->price}}</span>
+                                     <ul class="stars">
+                                     @for ($i=1;$i<=$kid->point;$i++)
+                                     <li><i class="fa fa-star"></i></li>
+                                     @endfor
+
+                                     </ul>
+                                 </div>
+                             </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
