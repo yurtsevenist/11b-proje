@@ -57,7 +57,7 @@ https://templatemo.com/tm-571-hexashop
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Anasayfa</a></li>
+                            <li class="scroll-to-section"><a href="{{url('/')}}" class="active">Anasayfa</a></li>
                             <li class="scroll-to-section"><a href="#men">Erkek</a></li>
                             <li class="scroll-to-section"><a href="#women">Kadın</a></li>
                             <li class="scroll-to-section"><a href="#kids">Çocuk</a></li>

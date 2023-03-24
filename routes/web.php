@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,8 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('front.home');
+    $mens=Product::whereCategory('Erkek')->take(5)->orderBy('point','DESC');
+    return view('front.home',compact('mens'));
 });
 
 Route::get('login', function () {
