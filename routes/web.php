@@ -39,5 +39,5 @@ Route::post('registerPost', [Controller::class, 'registerPost'])->name('register
 Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
 
 Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');
-
+Route::get('/detail/{id}', [Controller::class, 'detail'])->name('detail');
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');

@@ -11,6 +11,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests\RegisterPostRequest;
 use App\Http\Requests\ProfilePostRequest;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Product;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -72,5 +73,10 @@ class Controller extends BaseController
        $sil->delete();
        toastr()->success('Üyeliğiniz Sonlandırılmıştır', 'Başarılı');
        return view('front.home');
+    }
+    public function detail($id)
+    {
+        $urun=Product::whereId($id)->first();
+        return view('front.detail',compact('urun'));
     }
 }
