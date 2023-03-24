@@ -213,6 +213,7 @@
 <script src="{{asset('front')}}/assets/js/slick.js"></script>
 <script src="{{asset('front')}}/assets/js/lightbox.js"></script>
 <script src="{{asset('front')}}/assets/js/isotope.js"></script>
+<script src="{{asset('front')}}/assets/js/quantity.js"></script>
 
 <!-- Global Init -->
 <script src="{{asset('front')}}/assets/js/custom.js"></script>
