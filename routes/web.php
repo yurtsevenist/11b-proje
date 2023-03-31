@@ -24,21 +24,22 @@ Route::get('/', function () {
 
 Route::get('login', function () {
     return view('front.login');
-});
+})->name('login');
 
 Route::get('register', function () {
     return view('front.register');
-});
-
-Route::get('profil', function () {
-    return view('front.profil');
-});
+})->name('register');
 
 Route::post('loginPost', [Controller::class, 'loginPost'])->name('loginPost');
 Route::post('registerPost', [Controller::class, 'registerPost'])->name('registerPost');
-Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
-
-Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');
 Route::get('/detail/{id}', [Controller::class, 'detail'])->name('detail');
 Route::get('/products/{kind}', [Controller::class, 'products'])->name('products');
+
+
+Route::middleware('auth','verified')->group(function()
+{
+Route::get('profil', function () {return view('front.profil');})->name('profil');
+Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
+Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');
+});
