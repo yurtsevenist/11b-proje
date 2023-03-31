@@ -21,7 +21,7 @@ class Controller extends BaseController
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             toastr()->success('Hoşgeldin '.Auth::user()->name, 'Karşılama');
-            return view('front.home');
+            return redirect()->route('/');
         }
 
             toastr()->error('Şifreniz veya kullanıcı adınız hatalı ','Hata');
@@ -31,7 +31,7 @@ class Controller extends BaseController
     {
         toastr()->info('Güle Güle '.Auth::user()->name, 'Uğurlama');
         Auth::logout();
-        return view('front.home');
+        return redirect()->route('/');
     }
     public function registerPost(RegisterPostRequest $request)
     {

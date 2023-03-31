@@ -30,7 +30,7 @@
                                             </div>
                                             <div class="hover-content">
                                                 <div class="inner">
-                                                    <h4>WKadın</h4>
+                                                    <h4>Kadın</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div class="main-border-button">
                                                         <a href="{{route('products','women')}}">Keşfet</a>
@@ -65,12 +65,12 @@
                                     <div class="right-first-image">
                                         <div class="thumb">
                                             <div class="inner-content">
-                                                <h4>Kids</h4>
+                                                <h4>Çocuk</h4>
                                                 <span>Best Clothes For Kids</span>
                                             </div>
                                             <div class="hover-content">
                                                 <div class="inner">
-                                                    <h4>Kids</h4>
+                                                    <h4>Çocuk</h4>
                                                     <p>Lorem ipsum dolor sit amet, conservisii ctetur adipiscing elit incid.</p>
                                                     <div class="main-border-button">
                                                         <a href="{{route('products','kids')}}">Keşfet</a>

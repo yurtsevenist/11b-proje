@@ -20,7 +20,7 @@ Route::get('/', function () {
     $kids=Product::whereCategory('Çocuk')->take(5)->orderBy('point','DESC')->get();
     $aks=Product::whereCategory('Aksesuar')->take(5)->orderBy('point','DESC')->get();
     return view('front.home',compact('mens','womens','kids','aks'));
-});
+})->name('/');
 
 Route::get('login', function () {
     return view('front.login');
