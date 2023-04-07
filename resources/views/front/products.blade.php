@@ -38,7 +38,11 @@
                                 <ul>
                                     <li><a href="{{route('detail',$urun->id)}}"><i class="fa fa-eye"></i></a></li>
                                     <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+                                    @auth
                                     <li><a class="add-click" href="#" pid={{$urun->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                    @else
+                                    <li><a class="" href="{{url('login')}}" pid={{$urun->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                    @endauth
                                 </ul>
                             </div>
                             <img src="{{$urun->photo}}" alt="">
@@ -66,21 +70,5 @@
 <!-- ***** Products Area Ends ***** -->
 @endsection
 @section('js')
-<script>
-    $(function(){
-       $('.add-click').click(function(){
-         pid=$(this)[0].getAttribute('pid');
-         console.log(pid);
-        $.ajax({
-          type:'GET',
-          url:'{{route('addCart')}}',
-          data:{pid:pid},
-          success:function(data){
-            console.log(data);
-            // $('#cart').text(data)
-          },
-        })
-       });
-    });
-  </script>
+@include('front.addCart')
 @endsection

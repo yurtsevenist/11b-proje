@@ -5,6 +5,11 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Auth\Events\Authenticated;
+use Illuminate\Contracts\Auth\Guard;
+use App\Models\Cart;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -22,9 +27,16 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Guard $auth)
     {
         Schema::defaultStringLength(191);
         Paginator::useBootstrap();
+        $mycart=0;
+        View::composer('*', function ($view) use($auth) {
+            $mycart=0;
+            if($auth->user())
+            $mycart=Cart::where('cid',$auth->user()->id)->get()->sum('number');
+            $view->with('mycart',$mycart);
+        });
     }
 }

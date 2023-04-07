@@ -132,7 +132,12 @@
                                         <ul>
                                             <li><a href="{{route('detail',$men->id)}}"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            @auth
+                                            <li><a class="add-click" href="#" pid={{$men->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                            @else
+                                            <li><a class="" href="{{url('login')}}" pid={{$men->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                            @endauth
+
                                         </ul>
                                     </div>
                                     <img src="{{$men->photo}}" alt="">
@@ -181,7 +186,11 @@
                                         <ul>
                                             <li><a href="{{route('detail',$women->id)}}"><i class="fa fa-eye"></i></a></li>
                                             <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            @auth
+                                            <li><a class="add-click" href="#" pid={{$women->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                            @else
+                                            <li><a class="" href="{{url('login')}}" pid={{$women->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                            @endauth
                                         </ul>
                                     </div>
                                     <img src="{{$women->photo}}" alt="">
@@ -229,7 +238,11 @@
                                          <ul>
                                             <li><a href="{{route('detail',$kid->id)}}"><i class="fa fa-eye"></i></a></li>
                                              <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                             <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                             @auth
+                                             <li><a class="add-click" href="#" pid={{$kid->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                             @else
+                                             <li><a class="" href="{{url('login')}}" pid={{$kid->id}}><i class="fa fa-shopping-cart"></i></a></li>
+                                             @endauth
                                          </ul>
                                      </div>
                                      <img src="{{$kid->photo}}" alt="">
@@ -303,4 +316,7 @@
             </div>
         </section>
         <!-- ***** Explore Area Ends ***** -->
+    @endsection
+    @section('js')
+    @include('front.addCart')
     @endsection

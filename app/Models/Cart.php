@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    function getProduct()
+    {
+        return $this->hasOne('App\Models\Product','id','pid');
+    }
 }

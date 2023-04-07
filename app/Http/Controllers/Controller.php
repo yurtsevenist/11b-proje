@@ -113,6 +113,7 @@ class Controller extends BaseController
     public function addCart(Request $request)
     {
         $product=Product::whereId($request->pid)->first();
+        $mycart=0;
         if($product)
         {
             $cart=Cart::wherePid($product->id)->first();
@@ -124,16 +125,41 @@ class Controller extends BaseController
             $cart->number+=1;
             $cart->tprice+=$product->price;
             $cart->save();
-            return response()->json("basarılı");
+            $mycart=Cart::where('cid',Auth::user()->id)->get()->sum('number');
+            return response()->json($mycart);
         }
         else
         {
-            return response()->json("basarısız");
+            return response()->json($mycart);
         }
     }
     public function cart()
     {
-        $carts=Cart::whereCid(Auth::user()->id)->orderBy('created_at','ASC')->get();
+        $carts=Cart::whereCid(Auth::user()->id)->with('getProduct')->orderBy('created_at','ASC')->get();
         return view('front.cart',compact('carts'));
+    }
+    public function cartDelete($id)
+    {
+        try {
+            $cart=Cart::whereId($id)->first();
+            $cart->delete();
+            toastr()->success('Ürün sepetinizden çıkarıldı', 'Başarılı');
+
+        } catch (\Exception $th) {
+            toastr()->error('Beklenmedik bir hata meydana geldi', 'Hata');
+        }
+        return redirect()->back();
+
+    }
+    public function cartAllDelete()
+    {
+        $carts=Cart::whereCid(Auth::user()->id)->get();
+        foreach($carts as $cart)
+        {
+            $cart->delete();
+        }
+        toastr()->success('Ürünle sepetinizden çıkarıldı', 'Başarılı');
+        return redirect()->back();
+
     }
 }

@@ -42,5 +42,7 @@ Route::get('profil', function () {return view('front.profil');})->name('profil')
 Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
 Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');
 Route::get('addCart',[Controller::class,'addCart'])->name('addCart');
+Route::get('/cartDelete/{id}', [Controller::class, 'cartDelete'])->name('cartDelete');
+Route::get('cartAllDelete',[Controller::class,'cartAllDelete'])->name('cartAllDelete');
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');
 });
