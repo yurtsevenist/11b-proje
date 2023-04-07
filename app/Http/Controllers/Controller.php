@@ -12,6 +12,7 @@ use App\Http\Requests\RegisterPostRequest;
 use App\Http\Requests\ProfilePostRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Product;
+use App\Models\Cart;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -108,5 +109,31 @@ class Controller extends BaseController
         }
         return view('front.products',compact('uruns','kind'));
 
+    }
+    public function addCart(Request $request)
+    {
+        $product=Product::whereId($request->pid)->first();
+        if($product)
+        {
+            $cart=Cart::wherePid($product->id)->first();
+            if(!$cart)//ürün sepette yoksa
+            $cart=new Cart;//yeni bir ürün oluştur varsa bu satırı atlayacak
+            $cart->cid=Auth::user()->id;
+            $cart->pid=$product->id;
+            $cart->size=$product->size;
+            $cart->number+=1;
+            $cart->tprice+=$product->price;
+            $cart->save();
+            return response()->json("basarılı");
+        }
+        else
+        {
+            return response()->json("basarısız");
+        }
+    }
+    public function cart()
+    {
+        $carts=Cart::whereCid(Auth::user()->id)->orderBy('created_at','ASC')->get();
+        return view('front.cart',compact('carts'));
     }
 }

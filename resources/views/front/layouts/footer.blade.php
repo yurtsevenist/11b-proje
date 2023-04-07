@@ -197,7 +197,7 @@
 
 <!-- jQuery -->
 <script src="{{asset('front')}}/assets/js/jquery-2.1.0.min.js"></script>
-
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> --}}
 <!-- Bootstrap -->
 <script src="{{asset('front')}}/assets/js/popper.js"></script>
 <script src="{{asset('front')}}/assets/js/bootstrap.min.js"></script>
@@ -235,6 +235,6 @@
     });
 
 </script>
-
+@yield('js')
 </body>
 </html>

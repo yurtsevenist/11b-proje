@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('front')}}/assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="{{asset('front')}}/assets/css/lightbox.css">
+    @yield('css')
 <!--
 
 TemplateMo 571 Hexashop

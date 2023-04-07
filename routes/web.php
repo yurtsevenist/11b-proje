@@ -37,9 +37,10 @@ Route::get('/products/{kind}', [Controller::class, 'products'])->name('products'
 
 Route::middleware('auth','verified')->group(function()
 {
-Route::get('cart', function () {return view('front.cart');})->name('cart');
+Route::get('cart',[Controller::class,'cart'])->name('cart');
 Route::get('profil', function () {return view('front.profil');})->name('profil');
 Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
 Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');
+Route::get('addCart',[Controller::class,'addCart'])->name('addCart');
 Route::get('logOut', [Controller::class, 'logOut'])->name('logOut');
 });
