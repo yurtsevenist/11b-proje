@@ -29,7 +29,9 @@ Route::get('login', function () {
 Route::get('register', function () {
     return view('front.register');
 })->name('register');
-
+Route::get('denied', function () {
+    return view('front.denied');
+})->name('denied');
 Route::post('loginPost', [Controller::class, 'loginPost'])->name('loginPost');
 Route::post('registerPost', [Controller::class, 'registerPost'])->name('registerPost');
 Route::get('/detail/{id}', [Controller::class, 'detail'])->name('detail');
