@@ -44,14 +44,19 @@
                         </div>
                         <div class="right-content">
                             <div class="quantity buttons_added">
-                                <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+                                <input type="button"  value="-" class="minus"><input  type="number" id="pnumber" @if($urun->number>0) value="1" step="1" min="1" max="{{$urun->number}}" @else value="0" step="0" min="0" max="0" @endif name="quantity"  title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
                             </div>
                         </div>
                     </div>
                     <div class="total">
                         <h4>Total: $0</h4>
                         @if($urun->number>0)
-                        <div class="main-border-button"><a href="#">Sepete Ekle</a></div>
+                         @auth
+                         <div class="main-border-button"><a class="add-click"  pid={{$urun->id}} href="#">Sepete Ekle</a></div>
+                         @else
+                         <div class="main-border-button"><a class=""  pid={{$urun->id}} href="{{route('login')}}">Sepete Ekle</a></div>
+
+                         @endauth
                         @else
                         <div class="main-border-button" ><a class="text-warning">Stokta Yok</a></div>
                         @endif
@@ -64,4 +69,23 @@
     <!-- ***** Product Area Ends ***** -->
 @endsection
 
-
+@section('js')
+<script>
+    $(function(){
+       $('.add-click').click(function(){
+        var pnumber = $("#pnumber").val();
+         pid=$(this)[0].getAttribute('pid');
+        //  console.log(pid);
+        $.ajax({
+          type:'GET',
+          url:'{{route('addCartNumber')}}',
+          data:{pid:pid,pnumber:pnumber},
+          success:function(data){
+            // console.log(data);
+             $('#mycart').text('('+data+')')
+          },
+        })
+       });
+    });
+  </script>
+@endsection

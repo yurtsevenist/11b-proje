@@ -133,6 +133,29 @@ class Controller extends BaseController
             return response()->json($mycart);
         }
     }
+    public function addCartNumber(Request $request)
+    {
+        $product=Product::whereId($request->pid)->first();
+        $mycart=0;
+        if($product)
+        {
+            $cart=Cart::wherePid($product->id)->first();
+            if(!$cart)//ürün sepette yoksa
+            $cart=new Cart;//yeni bir ürün oluştur varsa bu satırı atlayacak
+            $cart->cid=Auth::user()->id;
+            $cart->pid=$product->id;
+            $cart->size=$product->size;
+            $cart->number+=$request->pnumber;
+            $cart->tprice+=$product->price;
+            $cart->save();
+            $mycart=Cart::where('cid',Auth::user()->id)->get()->sum('number');
+            return response()->json($mycart);
+        }
+        else
+        {
+            return response()->json($mycart);
+        }
+    }
     public function cart()
     {
         $carts=Cart::whereCid(Auth::user()->id)->with('getProduct')->orderBy('created_at','ASC')->get();
