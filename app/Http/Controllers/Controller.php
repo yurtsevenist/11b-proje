@@ -158,8 +158,20 @@ class Controller extends BaseController
     }
     public function cart()
     {
-        $carts=Cart::whereCid(Auth::user()->id)->with('getProduct')->orderBy('created_at','ASC')->get();
+        $ocode="notyet";
+        $carts=Cart::whereCid(Auth::user()->id)->whereOcode($ocode)->with('getProduct')->orderBy('created_at','ASC')->get();
         return view('front.cart',compact('carts'));
+    }
+    public function payment()
+    {
+        $ocode="notyet";
+        $cart=Cart::whereCid(Auth::user()->id)->whereOcode($ocode)->get();
+        $sum=$cart->sum('tprice');
+        $number=$cart->sum('number');
+        $cargo=0;
+        if($sum<100)
+        $cargo=2+(($number-1)*0.5);
+        return view('front.payment',compact('sum','cargo'));
     }
     public function cartDelete($id)
     {
@@ -183,6 +195,5 @@ class Controller extends BaseController
         }
         toastr()->success('Ürünle sepetinizden çıkarıldı', 'Başarılı');
         return redirect()->back();
-
     }
 }

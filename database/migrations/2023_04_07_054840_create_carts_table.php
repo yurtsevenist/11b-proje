@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
+            $table->string('ocode')->default("notyet");
             $table->integer('cid')->comment("Müşteri id si");
             $table->integer('pid')->comment("Ürün id si");
             $table->string('size')->nullable()->comment("ürünün bedeni");

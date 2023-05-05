@@ -74,7 +74,7 @@
 
                 <div class="row">
                     <div class="col-md-6">
-                        <button class="btn btn-outline-primary btn-block" type="button"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Sepeti Onayla</button>
+                        <a class="btn btn-outline-primary btn-block" type="button" href="{{route('payment')}}"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Sepeti Onayla</a>
 
                     </div>
                     <div class="col-md-6">
