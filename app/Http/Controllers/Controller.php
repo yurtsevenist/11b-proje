@@ -13,6 +13,8 @@ use App\Http\Requests\ProfilePostRequest;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Adres;
+use Illuminate\Support\Str;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
@@ -164,6 +166,39 @@ class Controller extends BaseController
     }
     public function payment()
     {
+        $adres=Adres::whereCid(Auth::user()->id)->first();
+        if($adres)
+        {
+            $ocode="notyet";
+            $cart=Cart::whereCid(Auth::user()->id)->whereOcode($ocode)->get();
+            $sum=$cart->sum('tprice');
+            $number=$cart->sum('number');
+            $cargo=0;
+            if($sum<100)
+            $cargo=2+(($number-1)*0.5);
+            return view('front.payment',compact('sum','cargo','adres'));
+        }
+        else
+        {
+            $adres=null;
+            return view('front.adres',compact('adres'));
+        }
+    }
+    public function adresPost(Request $request)
+    {
+        $adres=Adres::whereCid(Auth::user()->id)->first();
+        if(!$adres)
+        {
+            $adres=new Adres;
+        }
+        $adres->cid=Auth::user()->id;
+        $adres->def=Str::title($request->def);
+        $adres->province=Str::title($request->province);
+        $adres->district=Str::title($request->district);
+        $adres->address=Str::title($request->address);
+        $adres->pc=$request->pc;
+        $adres->save();
+        $adres=Adres::whereCid(Auth::user()->id)->first();
         $ocode="notyet";
         $cart=Cart::whereCid(Auth::user()->id)->whereOcode($ocode)->get();
         $sum=$cart->sum('tprice');
@@ -171,7 +206,12 @@ class Controller extends BaseController
         $cargo=0;
         if($sum<100)
         $cargo=2+(($number-1)*0.5);
-        return view('front.payment',compact('sum','cargo'));
+        return view('front.payment',compact('sum','cargo','adres'));
+    }
+    public function adres()
+    {
+        $adres=Adres::whereCid(Auth::user()->id)->first();
+        return view('front.adres',compact('adres'));
     }
     public function cartDelete($id)
     {

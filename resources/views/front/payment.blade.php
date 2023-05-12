@@ -167,12 +167,19 @@
 
                   </div>
                   <span>${{$sum+$cargo}}</span>
-                    
+
 
 
                 </div>
 
-
+                <div class="p-3 d-flex justify-content-between">
+                    <div class="d-flex flex-column">
+                        <span>Adresiniz &nbsp;<a title="Adresini güncellemek istiyorsanız tıklayın" href="{{route('adres')}}"><i class="fa fa-pencil text-primary"></i></a></span>
+                        <small>{{$adres->def}}</small>
+                        <br>
+                        <p>{{$adres->province}} {{$adres->district}} {{$adres->address}} Posta Kodu:{{$adres->pc}}</p>
+                    </div>
+                </div>
 
 
 
