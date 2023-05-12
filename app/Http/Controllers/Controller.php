@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Adres;
+use App\Models\Order;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller as BaseController;
 
@@ -127,7 +129,7 @@ class Controller extends BaseController
             $cart->number+=1;
             $cart->tprice+=$product->price;
             $cart->save();
-            $mycart=Cart::where('cid',Auth::user()->id)->get()->sum('number');
+            $mycart=Cart::where('cid',Auth::user()->id)->whereOcode('notyet')->get()->sum('number');
             return response()->json($mycart);
         }
         else
@@ -150,7 +152,7 @@ class Controller extends BaseController
             $cart->number+=$request->pnumber;
             $cart->tprice+=$product->price;
             $cart->save();
-            $mycart=Cart::where('cid',Auth::user()->id)->get()->sum('number');
+            $mycart=Cart::where('cid',Auth::user()->id)->whereOcode('notyet')->get()->sum('number');
             return response()->json($mycart);
         }
         else
@@ -183,6 +185,52 @@ class Controller extends BaseController
             $adres=null;
             return view('front.adres',compact('adres'));
         }
+    }
+    public function payPost(Request $request)
+    {
+        // dd($request);
+        if(Str::length($request->cardnumber)<16)
+        {
+            toastr()->error('Kredi kart numaranız 16 haneli olmak zorundadır', 'Hata');
+            return redirect()->back();
+        }
+        if(Str::length($request->ccv)<3)
+        {
+            toastr()->error('Kredi kart CCV numaranız 3 haneli olmak zorundadır', 'Hata');
+            return redirect()->back();
+        }
+        if(Carbon::parse($request->expiredate) < Carbon::now()->format('Y-m'))
+        {
+            toastr()->error('Kredi kart son kullanma tarihiniz bugün ve ileri tarihli olmak zorundadır', 'Hata');
+            return redirect()->back();
+        }
+        do {
+            $ocode = Str::random(6);
+        } while (Order::whereOcode($ocode)->exists());//benzersiz bir sipariş kodu oluşturduk
+        $order=new Order;
+        $order->cid=Auth::user()->id;
+        $order->ocode=$ocode;
+        $order->sum=$request->sum;
+        $order->order_date=Carbon::now();
+        $order->cargo=$request->cargo;
+        $order->paymethod=2;
+        $order->status=0;
+        $order->delivery=Carbon::now()->addDays(4);
+        $order->save();
+        $carts=Cart::whereCid(Auth::user()->id)->whereOcode("notyet")->get();
+        foreach($carts as $cart)
+        {
+            $cart->ocode=$ocode;
+            $cart->save();
+        }
+        return redirect()->route('orders');
+
+
+    }
+    public function orders()
+    {
+        $orders=Order::whereCid(Auth::user()->id)->orderBy('order_date','DESC')->get();
+        return view('front.orders',compact('orders'));
     }
     public function adresPost(Request $request)
     {

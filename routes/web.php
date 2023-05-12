@@ -42,6 +42,8 @@ Route::middleware('auth','verified')->group(function()
 Route::get('cart',[Controller::class,'cart'])->name('cart');
 Route::get('profil', function () {return view('front.profil');})->name('profil');
 Route::get('adres',[Controller::class,'adres'])->name('adres');
+Route::get('orders',[Controller::class,'orders'])->name('orders');
+Route::post('payPost', [Controller::class, 'payPost'])->name('payPost');
 Route::post('profilePost', [Controller::class, 'profilePost'])->name('profilePost');
 Route::post('adresPost', [Controller::class, 'adresPost'])->name('adresPost');
 Route::get('/userDelete/{id}', [Controller::class, 'userDelete'])->name('userDelete');

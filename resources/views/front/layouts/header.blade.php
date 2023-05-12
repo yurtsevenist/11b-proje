@@ -68,8 +68,8 @@ https://templatemo.com/tm-571-hexashop
                             <li class="submenu">
                                 <a href="javascript:;">{{Auth::user()->name}}</a>
                                 <ul>
-                                    <li><a href="{{url('cart')}}">Sepetim <i id="mycart">({{$mycart}})</i></a></li>
-                                    <li><a href="#">Siparişlerim</a></li>
+                                    <li><a href="{{route('cart')}}">Sepetim <i id="mycart">({{$mycart}})</i></a></li>
+                                    <li><a href="{{route('orders')}}">Siparişlerim</a></li>
                                     <li><a href="{{url('profil')}}">Profil Sayfam</a></li>
                                     <li><a href="{{route('adres')}}">Adres Bilgilerim</a></li>
                                     <li><a href="{{route('logOut')}}">Oturumu Kapat</a></li>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('ocode')->unique()->comment("spariş numarası");
             $table->integer('cid')->comment("Müşteri id si");
             $table->date('order_date')->comment("sipariş tarihi");
+            $table->double('sum')->default(0);
             $table->double('cargo')->default(0);
             $table->integer('paymethod')->default(0)->comment("0 ise kapıda ödeme, 1 ise havale, 2 ise kk, 3 ise coin");
             $table->integer('status')->default(0)->comment("0 ise hazırlanıyor, 1 ise kargoya verildi, 2 ise teslim edildi, -1 iptal, -2 iade");

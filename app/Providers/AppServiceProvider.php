@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function ($view) use($auth) {
             $mycart=0;
             if($auth->user())
-            $mycart=Cart::where('cid',$auth->user()->id)->get()->sum('number');
+            $mycart=Cart::where('cid',$auth->user()->id)->whereOcode('notyet')->get()->sum('number');
             $view->with('mycart',$mycart);
         });
     }
